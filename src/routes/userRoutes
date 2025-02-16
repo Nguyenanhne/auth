@@ -1,0 +1,9 @@
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/userController");
+const checkAdmin = require("../middlewares/authMiddleware");
+
+router.post("/blockUser", checkAdmin, userController.blockUser);
+router.post("/unblockUser", checkAdmin, userController.unblockUser);
+
+module.exports = router;
