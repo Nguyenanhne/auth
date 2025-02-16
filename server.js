@@ -18,6 +18,9 @@ app.get('/ping', (req, res) => {
   res.send('Server đang hoạt động');
 });
 
+app.get("/", (req, res) => {
+  res.send("🚀 Server đang chạy trên Vercel!");
+});
 // const UPLOAD_DIR = path.join(__dirname, 'uploads');
 // fs.ensureDirSync(UPLOAD_DIR);
 // const storage = multer.memoryStorage(); // Lưu file vào RAM thay vì ổ cứng
