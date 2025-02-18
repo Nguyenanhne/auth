@@ -21,4 +21,4 @@ admin.initializeApp({
 const db = admin.firestore(); // Kết nối Firestore
 const auth = getAuth(admin.app()); // Khởi tạo Auth instance
 
-module.exports = { auth, db };
+module.exports = { auth, db, admin };

@@ -7,9 +7,12 @@ app.use(express.json());
 
 const authRoutes = require("./src/routes/authRoutes");
 const getURLRoutes = require("./src/routes/getURLRoutes")
+const userRoutes = require("./src/routes/userRoutes")
 
 app.use("/api/auth", authRoutes);
+app.use("/api/auth", userRoutes);
 app.use("/api/get-url", getURLRoutes);
+
 app.use((req, res, next) => {
   console.log(`👉 Nhận request: ${req.method} ${req.url}`);
   next();

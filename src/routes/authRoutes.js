@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const verifyFirebaseToken = require("../middlewares/authMiddleware");
+const {checkAdmin, checkUser} = require("../middlewares/authMiddleware");
 
-router.post("/check-token", verifyFirebaseToken, (req, res) => {
+router.post("/check-admin", checkAdmin, (req, res) => {
   res.json({ message: "Token hợp lệ!", user: req.user });
 });
-
+router.post("/check-user", checkUser, (req, res) => {
+  res.json({ message: "Token hợp lệ!", user: req.user });
+});
 module.exports = router;
